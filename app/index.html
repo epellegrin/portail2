@@ -1,102 +1,431 @@
-<!doctype html>
-<html class="no-js" lang="">
-  <head>
-    <meta charset="utf-8">
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>portail2</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 
-    <link rel="apple-touch-icon" href="apple-touch-icon.png">
-    <!-- Place favicon.ico in the root directory -->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-    <!-- build:css styles/vendor.css -->
-    <!-- bower:css -->
-    <!-- endbower -->
-    <!-- endbuild -->
+    <title>MOBVINO, le vin en toute mobilité</title>
 
-    <!-- build:css styles/main.css -->
-    <link rel="stylesheet" href="styles/main.css">
-    <!-- endbuild -->
-    
-    <!-- build:js scripts/vendor/modernizr.js -->
-    <script src="/bower_components/modernizr/modernizr.js"></script>
-    <!-- endbuild -->
-  </head>
-  <body>
-    <!--[if lt IE 10]>
-      <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-    <![endif]-->
-    
-    <div class="container">
-      <div class="header">
-        <ul class="nav nav-pills pull-right">
-          <li class="active"><a href="#">Home</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Contact</a></li>
-        </ul>
-        <h3 class="text-muted">portail2</h3>
-      </div>
+    <meta name="keywords" content="mobvino, vin, application, mobilité" />
+    <meta name="description" content="MOBVINO, le vin en toute mobilité" />
 
-      <div class="jumbotron">
-        <h1>'Allo, 'Allo!</h1>
-        <p class="lead">Always a pleasure scaffolding your apps.</p>
-        <p><a class="btn btn-lg btn-success" href="#">Splendid!</a></p>
-      </div>
 
-      <div class="row marketing">
-        <div class="col-lg-6">
-          <h4>HTML5 Boilerplate</h4>
-          <p>HTML5 Boilerplate is a professional front-end template for building fast, robust, and adaptable web apps or sites.</p>
-          
-          <h4>Sass</h4>
-          <p>Sass is the most mature, stable, and powerful professional grade CSS extension language in the world.</p>
-          
-          <h4>Bootstrap</h4>
-          <p>Sleek, intuitive, and powerful mobile first front-end framework for faster and easier web development.</p>
-          <h4>Modernizr</h4>
-          <p>Modernizr is an open-source JavaScript library that helps you build the next generation of HTML5 and CSS3-powered websites.</p>
-          
-        </div>
-      </div>
+    <meta property="og:title" content="MOBVINO, le vin en toute mobilité" />
+    <meta property="og:url" content="http://www.mobvino.com" />
+    <meta property="og:locale" content="fr_FR" />
+    <meta property="og:type" content="website" />
+    <meta property="og:description" content="" />
+    <meta property="og:site_name" content="MOBVINO" />
 
-      <div class="footer">
-        <p>♥ from the Yeoman team</p>
-      </div>
-    </div>
-    
-    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-    <script>
-      (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-      function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-      e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-      e.src='https://www.google-analytics.com/analytics.js';
-      r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-      ga('create','UA-XXXXX-X');ga('send','pageview');
+
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <link href="css/font-almelo.css" rel="stylesheet" type="text/css" />
+    <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <script language=javascript>
+        function redirectOnUserAgent() {
+            var mapping = {
+                // scheme : market://details?id=<package_name>
+                'android': 'market://details?id=com.mobvino.mobvino',
+
+                //scheme : itms-apps://itunes.apple.com/app/id<numeric_app_id>
+                'iphone': 'itms-apps://itunes.apple.com/app/id925128279',
+
+                // if availables :
+                'ipad': 'itms-apps://itunes.apple.com/app/id925128279',
+                'ipod': 'itms-apps://itunes.apple.com/app/id925128279',
+            }
+
+            var userAgent = navigator.userAgent.toLowerCase();
+            for (var dev in mapping) {
+                if (userAgent.search(dev) != -1) {
+                    window.location = mapping[dev];
+                    return;
+                }
+            }
+
+            // else redirect to another page, or nothing
+            // window.location = 'http://www.my-top-app-site.com';
+        }
     </script>
+</head>
 
-    <!-- build:js scripts/vendor.js -->
-    <!-- bower:js -->
-    <script src="/bower_components/jquery/dist/jquery.js"></script>
-    <!-- endbower -->
-    <!-- endbuild -->
-    
-    <!-- build:js scripts/plugins.js -->
-    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/affix.js"></script>
-    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/alert.js"></script>
-    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/dropdown.js"></script>
-    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/tooltip.js"></script>
-    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/modal.js"></script>
-    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/transition.js"></script>
-    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/button.js"></script>
-    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/popover.js"></script>
-    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/carousel.js"></script>
-    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/scrollspy.js"></script>
-    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/collapse.js"></script>
-    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/tab.js"></script>
-    <!-- endbuild -->
-    
-    <!-- build:js scripts/main.js -->
-    <script src="scripts/main.js"></script>
-    <!-- endbuild -->
-  </body>
+<body onload="redirectOnUserAgent();">
+    <header class="row container">
+        <div id="logo" class="col-md-push-4 col-sm-4 col-sm-push-4">
+            <h1>Mobvino, le vin en toute mobilité</h1>
+            <img class="hidden-xs" src="img/logo.png" alt="Mobvino" />
+            <img class="hidden-sm hidden-md hidden-lg logo_mobile" src="img/logo_mobile.png" alt="Mobvino" />
+
+        </div>
+    </header>
+    <div id="telecharg" style="background:#aa2c74">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-push-4 col-sm-4 col-sm-push-4" style="text-align: center;">
+                    <a href="https://play.google.com/store/apps/details?id=com.mobvino.mobvino">
+                        <img alt="Get it on Google Play" src="img/fr_generic_rgb_wo_45.png" style="width:110px;heigth:auto" />
+                    </a>
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col-md-push-4 col-sm-4 col-sm-push-4" style="text-align: center;padding-top:10px;padding-bottom:10px;">
+                    <a href="https://itunes.apple.com/fr/app/mobvino/id925128279">
+                        <img alt="Get it on itunes" src="img/Available_on_iTunes_Badge_FR_110x40_1108.png" style="width:110px;heigth:auto" />
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--<div id="services" class="row">
+    <div class="container">
+        <div class="our-services">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2>ACTUALITE</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-5 wow fadeInDown animated" data-wow-duration="1000ms" data-wow-delay="300ms" style="visibility: visible; -webkit-animation: fadeInDown 1000ms 300ms;">
+                    <a href="http://fr.ulule.com/mobvino-reseau/" target="_blank">
+                        <img src="/img/ulule.png" alt="" class="responsive">
+                    </a>
+                </div>
+                <div class="col-sm-7 wow fadeInDown animated" data-wow-duration="1000ms" data-wow-delay="300ms" style="visibility: visible; -webkit-animation: fadeInDown 1000ms 300ms;">
+                    <div class="service-info">
+                        <h1>CROWDFUNDING</h1>
+                        <h2><a href="http://fr.ulule.com/mobvino-reseau/">SOUTENEZ NOUS SUR ULULE</a> <br><span style="font-size: 18px">Du 30/01/2015 au 30/03/2015</span></h2>
+                        <p>Retrouvez <strong>MobVino<img src="/img/sign.png"></strong> en campagne sur Ulule et devenez nos
+                            <br><strong>MobVino<img src="/img/sign.png"></strong> Angels ! </p>
+                        <p>On compte sur vous pour faire du bruit autour de l’événement</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>-->
+    <div id="slide" class="row">
+        <div class="container">
+            <div id="gauche" class="col-sm-6 col-xs-12">
+                <h2>Infos et partage des vins<br />dopés par les amateurs </h2>
+                <p>L'Identification des vins, les avis et conseils communautaires, la gestion de cave et des vins favoris, la géolocalisation.
+                    <br>Maintenant, tous regroupés en une seule application</p>
+
+
+                <a class="btn btn-primary btn-lg scroll" href="#contact">Inscrivez-vous maintenant !</a>
+            </div>
+            <div id="droite" class="col-md-offset-2 col-sm-offset-1 col-md-4 col-lg-3 col-sm-5 hidden-xs">
+                <div id="carousel-appli" class="tel_slide carousel slide" data-ride="carousel">
+                    <img src="img/iphone.png" alt="" />
+
+                    <div id="photo_carousel" class="carousel-inner">
+                        <div class="item active">
+                            <img src="img/screen1.png" />
+                        </div>
+                        <div class="item">
+                            <img src="img/screen2.png" />
+                        </div>
+                        <div class="item">
+                            <img src="img/screen3.png" />
+                        </div>
+                    </div>
+
+                    <ol id="carousel_nav_header" class="carousel-indicators">
+                        <li data-target="#carousel-appli" data-slide-to="0" class="active"></li>
+                        <li data-target="#carousel-appli" data-slide-to="1" href="#"></li>
+                        <li data-target="#carousel-appli" data-slide-to="2" href="#"></li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="fonctionnalite">
+        <div class="row container">
+            <div class="titre_fonctionnalite hidden-xs">
+                <h2>Les fonctionnalités <br> de l'application</h2>
+            </div>
+            <ul>
+                <li class="col-lg-3 col-md-3 col-sm-6 col-xs-12 screens_contenu1">
+                    <img src="img/contenu1_screen1.png" />
+                    <div class="legende1 legende">
+                        <h2>Nouvelles en Temps réel</h2>
+                        <p>Suivez les avis et publications les plus récents des utilisateurs du réseau.localisez et commentez les publications.</p>
+                        <img class="hidden-sm hidden-xs" src="img/fleche1.png">
+                    </div>
+                </li>
+                <li class="col-lg-3 col-md-3 col-sm-6 col-xs-12 screens_contenu1">
+                    <img src="img/contenu1_screen2.png" />
+                    <div class="legende2 legende">
+                        <h2>Partage social</h2>
+                        <p>Partagez sur MobVino et sur vos réseaux préférés, vos avis et vos impressions sur les vins que vous dégustez.Mettez en avant vos goûts</p>
+                        <img class="hidden-sm hidden-xs" src="img/fleche2.png">
+                    </div>
+                </li>
+                <li class="col-lg-3 col-md-3 col-sm-6 col-xs-12 screens_contenu1">
+                    <img src="img/contenu1_screen3.png" />
+                    <div class="legende3 legende">
+                        <h2>Infos sur les vins</h2>
+                        <p>vous allez tout connaître du vin que vous avez selectionné: ses caracteristiques, les avis des autres utilisateurs de MobVino, des conseils sur le vin,etc.</p>
+                        <img class="hidden-sm hidden-xs" src="img/fleche3.png">
+                    </div>
+                </li>
+                <li class="col-lg-3 col-md-3 col-sm-6 col-xs-12 screens_contenu1">
+                    <img src="img/contenu1_screen4.png" />
+                    <div class="legende4 legende">
+                        <h2>Infos sur les lieux et services</h2>
+                        <p>Accédez à la carte d'un restaurant, aux offres d'un caviste ou au domaine d'un producteur. Localisez facilement le meilleur service</p>
+                        <img class="hidden-sm hidden-xs" src="img/fleche4.png">
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="animation">
+        <div class="row container">
+            <div class="col-md-push-1 col-sm-3 col-xs-12 phone_animation">
+                <img class="hidden-xs" src="img/iphone_black.png">
+                <div class="gif">
+                    <img src="img/animation.gif">
+                </div>
+            </div>
+            <div class="col-sm-offset-3 col-md-5 col-sm-6 col-xs-12 text_animation">
+                <h2>Dégustez, Identifiez,  <br>partagez !</h2>
+                <p>Grâce à MobVino, vous allez pouvoir identifier le vin que vous goûtez et partager votre avis. Chaque nouveau partage sera disponible pour la communauté. Vous pourrez diffuser vos publications sur vos réseaux sociaux préférés. à chaque partage vous gagnez des points !</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="favoris">
+        <div class="row container">
+            <div class="col-md-offset-1 col-sm-5 col-xs-12 text_favoris">
+                <h2>Accédez à vos vins favoris<br> et gérez votre cave</h2>
+                <p>MobVino vous permet de constituer la liste de favoris au gré de vos dégustations et de retrouver l'historique de vos avis et commentaires.
+                    <br>
+                    <br>Synchronisez votre cave avec MobVino, vous pourrez facilement gérer vos entrées et sorties avec votre smartphone.</p>
+            </div>
+            <div class="col-md-offset-2 col-sm-offset-1 col-xs-3 hidden-xs phone_favoris">
+                <img src="img/iphone.png">
+                <div class="gif">
+                    <img src="img/screen3.png">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="contenu_social">
+        <div class="row container">
+            <div class="col-sm-offset-2 col-sm-8 col-sm-12 text_social">
+                <h2>suivez-nous sur les réseaux sociaux</h2>
+                <ul>
+                    <li id="facebook-feed"><i class="icon-facebook icon-4x"></i>
+                    </li>
+                    <li id="twitter-feed"><i class="icon-twitter icon-4x"></i>
+                    </li>
+                    <li id="instagram-feed"><i class="icon-instagram icon-4x"></i>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="row container">
+            <!-- START TWITTER FEED -->
+            <div id="twitter" class="feed-container col-xs-12"></div>
+            <!-- END TWITTER FEED -->
+
+            <!-- START FB FEED -->
+            <div id="facebook" class="feed-container col-xs-12"></div>
+            <!-- END FB FEED -->
+        </div>
+        <!-- START INSTAGRAM FEED -->
+        <div id="instagram" class="feed-container"></div>
+        <!-- END INSTAGRAM FEED -->
+    </div>
+
+    <div class="team">
+        <div class="row container">
+            <div id="carousel-equipe" class="slide_team carousel slide" data-ride="carousel">
+                <div class="col-sm-offset-2 col-sm-8 col-xs-12">
+                    <h2>L'équipe</h2>
+                </div>
+                <div id="photo_team" class="carousel-inner">
+                    <div class="item active">
+                        <div class="nom_team col-md-6 col-xs-12 text_favoris">
+                            <h2>Emmanuel Pellegrin</h2>
+                            <h3>Fondateur</h3>
+                            <p>Geek, Passioné de vin et amateur des vins du Languedoc-Roussillon et d'ailleurs, Emmanuel a imaginé une application mobile innovante qu'il va offrir à la communauté .</p>
+                            <br>
+
+
+
+                        </div>
+                        <img src="img/photo_equipe1.png" />
+                    </div>
+                    <div class="item">
+                        <div class="nom_equipe col-sm-6 col-xs-12">
+                            <h2>julien renier</h2>
+                            <h3>Web et Mobile</h3>
+                        </div>
+                        <img src="img/photo_equipe3.png" />
+                    </div>
+                    <div class="item">
+                        <div class="nom_equipe col-sm-6 col-xs-12">
+                            <h2>thomas hair</h2>
+                            <h3>Designer</h3>
+                        </div>
+                        <img src="img/photo_equipe2.png" />
+                    </div>
+                </div>
+                <ol id="carousel_nav_team hidden-xs" class="carousel-indicators">
+                    <li data-target="#carousel-equipe" data-slide-to="0" class="active"></li>
+                    <li data-target="#carousel-equipe" data-slide-to="1" href="#"></li>
+                    <li data-target="#carousel-equipe" data-slide-to="2" href="#"></li>
+                </ol>
+            </div>
+        </div>
+    </div>
+    <div class="contact" id="contact">
+        <div class="row container">
+            <div class="col-xs-push-2 col-xs-8">
+                <h2>Contact</h2>
+            </div>
+            <form class="col-sm-offset-1 col-sm-6 col-xs-12" role="form" id="contact-form" action="/" method="post">
+                <div class="formContainer">
+                    <input name="name" id="name" type="text" class="form-control" placeholder="Nom" />
+                </div>
+                <div class="formContainer">
+                    <input name="email" id="email" type="email" class="form-control" placeholder="Email" />
+                </div>
+                <div class="formContainer">
+                    <input name="subject" id="subject" type="text" class="form-control" placeholder="Sujet" />
+                </div>
+                <div class="formContainer">
+                    <textarea name="message" id="message" class="form-control" rows="3" placeholder="Demande"></textarea>
+                </div>
+                <div class="radio formContainer">
+                    <label>
+                        <input name="betatest" id="betatest" type="checkbox" />Devenir beta testeur de l’application
+                    </label>
+                </div>
+                <div class="formContainer">
+                    <button type="submit" id="submit" class="btn btn-default">Envoyer</button>
+                    <img src="img/loader-mobvino.gif" class="loader" alt="Envoi du message en cours..." />
+                </div>
+                <div class="formContainer">
+                    <p id="error" data-alert class="alert">Merci de remplir tous les champs.</p>
+                    <p id="thanks" data-alert class="alert alert-success">Merci, on vous répond le plus rapidement possible.</p>
+                    <p id="timedout" data-alert class="alert">Problème d'envoi du message.</p>
+                    <p id="state" data-alert class="alert"></p>
+                </div>
+            </form>
+            <div class="info_contact col-sm-4 hidden-xs">
+                <h3>Informations</h3>
+                <p>Nous sommes tout prêt à vous offrir le meilleur des services. Nous mettons tout en oeuvre pour peaufiner notre application. Si vous voulez nous aider à l'améliorer, vous pouvez vous enregistrer dès aujourd’hui et devenir un beta testeur de l'application.</p>
+                <div class="partage_contact">
+                    <h3>partager</h3>
+                    <span class="facebook"><a href="http://www.facebook.com/mobvino" target="_blank"><img src="img/facebook_contact.png"/>/mobvino</a></span>
+                    <span class="twitter"><a href="http://twitter.com/mobvino" target="_blank"><img src="img/twitter_contact.png"/>@mobvino</a></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="partenaires">
+        <div class="row container">
+            <h2>les partenaires</h2>
+            <ul class="col-lg-10 col-xs-12 hidden-lg">
+                <li class="col-sm-5">
+                    <a href="http://www.leadoff.fr" target="_blank">
+                        <img src="img/partenaire1.png" />
+                    </a>
+                </li>
+                <li class="col-sm-5">
+                    <a href="http://www.innovosud.fr" target="_blank">
+                        <img src="img/partenaire5.png" />
+                    </a>
+                </li>
+                <li class="col-lg-3 col-md-5 col-sm-4">
+                    <a href="http://www.sciencespo-aix.fr/" target="_blank">
+                        <img src="img/partenaire2.png" />
+                    </a>
+                </li>
+                <li class="col-lg-3 col-sm-4">
+                    <a href="http://www.laregion.fr" target="_blank">
+                        <img src="img/partenaire3.png" />
+                    </a>
+                </li>
+                <li class="col-lg-3 col-sm-4">
+                    <a href="http://www.beziers-agglo.org/" target="_blank">
+                        <img src="img/partenaire4.png" />
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <ul class="col-xs-12 hidden-xs hidden-md hidden-sm essai">
+            <li>
+                <a href="http://www.leadoff.fr" target="_blank">
+                    <img src="img/partenaire1.png" />
+                </a>
+            </li>
+            <li>
+                <a href="http://www.innovosud.fr" target="_blank">
+                    <img src="img/partenaire5.png" />
+                </a>
+            </li>
+            <li>
+                <a href="http://www.sciencespo-aix.fr/" target="_blank">
+                    <img src="img/partenaire2.png" />
+                </a>
+            </li>
+            <li>
+                <a href="http://www.laregion.fr" target="_blank">
+                    <img src="img/partenaire3.png" />
+                </a>
+            </li>
+            <li>
+                <a href="http://www.beziers-agglo.org/" target="_blank">
+                    <img src="img/partenaire4.png" />
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="footer">
+        <div class="row container">
+            <p>Copyright © 2014 Mobvino. Tous droits réservés. <a href="mentions.html">Mentions légales</a>.</p>
+        </div>
+    </div>
+</body>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/jquery.instagram.js"></script>
+<script type="text/javascript" src="js/jquery.timeago.js"></script>
+<script type="text/javascript" src="js/jquery.lifestream.js"></script>
+<script type="text/javascript" src="js/custom.modernizr.js"></script>
+<script type="text/javascript" src="js/svgeezy.min.js"></script>
+<script type="text/javascript" src="js/script.js"></script>
+<script type="text/javascript" src="js/respond.min.js"></script>
+<script>
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-44156856-1', 'mobvino.com');
+    ga('send', 'pageview');
+</script>
+
 </html>
